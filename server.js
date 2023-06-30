@@ -5,7 +5,7 @@ const cors = require("cors");
 const app = express();
 const port = 4000;
 
-//app.use(cors()); // Enable CORS for all routes
+app.use(cors()); // Enable CORS for all routes
 
 app.get("/", (req, res) => {
   res.send("Hey this is my API running 🥳");
