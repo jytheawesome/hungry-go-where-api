@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
 // Endpoint to proxy the Google Places API request
 app.get("/api/nearby-restaurants", async (req, res) => {
   const {latitude, longitude} = req.query;
-  const apiKey = "AIzaSyBxPOata2rKGBKtqGI53U4DPfAoE_H4Hcw"; // Replace with your actual API key
+  const apiKey = process.env.maps_api; // Replace with your actual API key
   const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${latitude},${longitude}&radius=1500&type=restaurant&key=${apiKey}`;
 
   try {
@@ -28,7 +28,7 @@ app.get("/api/nearby-restaurants", async (req, res) => {
 
 app.get("/api/search-restaurants", async (req, res) => {
   const {keyword, latitude, longitude} = req.query;
-  const apiKey = "AIzaSyBxPOata2rKGBKtqGI53U4DPfAoE_H4Hcw"; // Replace with your actual API key
+  const apiKey = process.env.maps_api; // Replace with your actual API key
   const url_search = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${latitude},${longitude}&radius=1500&type=restaurant&keyword=${keyword}&key=${apiKey}`;
   console.log(url_search);
 
