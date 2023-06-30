@@ -1,7 +1,6 @@
 const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
-const {Request, Response} = express;
 
 const app = express();
 const port = 3001;
@@ -45,3 +44,5 @@ app.get("/api/search-restaurants", async (req, res) => {
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
+
+module.exports = app;
