@@ -16,7 +16,7 @@ app.get("/api/nearby-restaurants", async (req, res) => {
   const {latitude, longitude} = req.query;
   const apiKey = process.env.maps_api; // Replace with your actual API key
   const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${latitude},${longitude}&radius=1500&type=restaurant&key=${apiKey}`;
-
+  console.log(url);
   try {
     const response = await axios.get(url);
     res.json(response.data);
